@@ -1,0 +1,92 @@
+$bc: black;
+
+html {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(45, 102, 112);
+  box-sizing: border-box;
+  font : {
+    family: chalkboard;
+    weight: 650;
+    size: 18px;
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+  margin: 25px;
+  header{
+    margin: 0 auto;
+    font: {
+      size: 24px;
+      family: "system-ui";
+      weight: 650; 
+    }
+  }
+}
+
+%items {
+  background-color: black;
+  width: 100%;
+  max-width: 100px;
+  min-width: 50px;
+  border-radius: 6px;
+  box-shadow: 3px 10px 3px 3px rgba(128, 128, 128, 0.219) inset;
+  transition: all 2s;
+}
+
+.container {
+  margin: 50px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
+  grid-template-areas: "one two three"
+                        "four five six"
+                        "seven eight nine"
+                        "ten eleven twelve"
+                        "thirteen fourteen fifteen";
+  grid-gap: 20px;
+  background: #74ebd5;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #ACB6E5, #74ebd5);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #ACB6E5, #74ebd5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  width: 50%;
+  min-width: 70%;
+  height: 80vh;
+  padding: 30px;
+  border-radius: 10px;
+  justify-content: center;
+  justify-items: center;
+  div {
+    @extend %items;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 579px) {
+  .container {
+    width: 390px;
+  }
+}
+
+div {
+  .rotate{
+    background-color: rgba(19, 50, 59, 0.329);
+    transform-origin: center center;
+    transform: rotateY(180deg);
+  }
+}
+
+[class*="fa-"] {
+  font-size: 70px;
+  padding: 8%;
+}
+
+
+
+
