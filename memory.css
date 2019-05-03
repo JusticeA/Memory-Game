@@ -24,9 +24,8 @@ body {
 
 .container div {
   background-color: black;
-  width: 100%;
-  max-width: 100px;
-  min-width: 50px;
+  width: 95%;
+  min-width: 95%;
   border-radius: 6px;
   box-shadow: 5px 10px 4px 0.7px rgba(71, 71, 71, 0.219) inset;
   transition: all 2s; }
@@ -44,26 +43,44 @@ body {
   background: linear-gradient(to right, #ACB6E5, #74ebd5);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   width: 50%;
-  min-width: 70%;
   height: 80vh;
   padding: 30px;
   border-radius: 10px;
   justify-content: center;
   justify-items: center; }
-  .container div {
-    max-width: 300px; }
 
-@media (max-width: 579px) {
+@media (min-width: 700px) {
   .container {
-    width: 390px; } }
+    width: 500px; }
+
+  [class*="fa-"] {
+    font-size: 40px;
+    padding-left: 29%;
+    padding-top: 18%; } }
+@media (max-width: 698px) {
+  .container {
+    width: 400px; }
+
+  [class*="fa-"] {
+    font-size: 40px;
+    padding-left: 24%;
+    padding-top: 20%; } }
+@media (max-width: 320px) {
+  .container {
+    width: 300px;
+    height: 200px div;
+      height-width: 55px;
+      height-height: 68px; }
+
+  [class*="fa-"] {
+    font-size: 30px;
+    padding: 34% 27%; } }
 div .rotate {
   background-color: rgba(19, 50, 59, 0.329);
   transform-origin: center center;
   transform: rotateY(360deg); }
 
-[class*="fa-"] {
-  font-size: 40px;
-  padding-left: 25%;
-  padding-top: 20%; }
+.visible {
+  visibility: hidden; }
 
 /*# sourceMappingURL=memory.css.map */

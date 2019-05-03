@@ -21,21 +21,37 @@ let genRand = function () {
       if (k >= 10) {
         k = 0;
       };
-      panels[num].classList.add("rotate", `${classArray[k]}`);
-      k++
+      panels[num].classList.add(`${classArray[k]}`);
+      k++;
     })
   }
-
   console.log(arr);
 }
 
+let lastClicked;
 let add = function () {
-  this.classList.add("rotate")
+  panels.forEach(panel => {
+    let newClicked;
+    if (panel.classList.contains("rotate")) {
+      newClicked = this.classList;
+      console.log(newClicked);
+      if (newClicked.item(1) === lastClicked.item(1)) {
+        
+        newClicked.value = "visible";
+        lastClicked.value = "visible";
+      } else {
+        newClicked.remove("rotate");
+        lastClicked.remove("rotate");
+      }
+    }
+  });
+  this.classList.add("rotate");
+  lastClicked = this.classList;
+  console.log(lastClicked.item(1));
 }
 
-
 panels.forEach(panel => {
-  panel.addEventListener("click", genRand)
+  panel.addEventListener("click", add);
 })
 
-// window.addEventListener("load", genRand);
+window.addEventListener("load", genRand);
