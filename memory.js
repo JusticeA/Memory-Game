@@ -1,11 +1,13 @@
-console.log("Getting there!");
+/* Variables */
 
 let panels = document.querySelectorAll(".container div");
-console.dir(panels)
-
+let audio = document.querySelectorAll("audio");
+let classArray = ["fa-angular", "fa-node-js", "fa-vuejs", "fa-grunt", "fa-js", "fa-react", "fa-github", "fa-css3", "fa-html5", "fa-python"];
+let classNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let arr = [];
-let classArray = ["fa-angular", "fa-node-js", "fa-vuejs", "fa-grunt", "fa-js", "fa-react", "fa-github", "fa-css3", "fa-html5", "fa-python"]
-let classNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+/* Functionality */
+
 let genRand = function () {
   let i;
   for (i = 0; i < 20; i++) {
@@ -30,17 +32,18 @@ let genRand = function () {
 
 let lastClicked;
 let add = function () {
+  audio[0].play();
   panels.forEach(panel => {
     let newClicked;
     if (panel.classList.contains("rotate")) {
       newClicked = this.classList;
       console.log(newClicked);
-      if (newClicked.item(1) === lastClicked.item(1)) {
-        
+      if (newClicked.item(1) === lastClicked.item(1) && !newClicked.contains("rotate")) {
+        audio[2].play();
         newClicked.value = "visible";
         lastClicked.value = "visible";
       } else {
-        newClicked.remove("rotate");
+        // newClicked.remove("rotate");
         lastClicked.remove("rotate");
       }
     }
@@ -50,8 +53,11 @@ let add = function () {
   console.log(lastClicked.item(1));
 }
 
+/* Event Listeners */
+
 panels.forEach(panel => {
   panel.addEventListener("click", add);
 })
+
 
 window.addEventListener("load", genRand);

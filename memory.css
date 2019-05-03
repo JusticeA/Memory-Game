@@ -51,30 +51,33 @@ body {
 
 @media (min-width: 700px) {
   .container {
-    width: 500px; }
+    width: 500px;
+    height: 70vh; }
 
   [class*="fa-"] {
     font-size: 40px;
     padding-left: 29%;
-    padding-top: 18%; } }
+    padding-top: 15%; } }
 @media (max-width: 698px) {
   .container {
-    width: 400px; }
+    width: 400px;
+    height: 68vh; }
 
   [class*="fa-"] {
     font-size: 40px;
-    padding-left: 24%;
-    padding-top: 20%; } }
-@media (max-width: 320px) {
+    padding-left: 25%;
+    padding-top: 18%; } }
+@media (max-width: 370px) {
   .container {
-    width: 300px;
-    height: 200px div;
-      height-width: 55px;
-      height-height: 68px; }
+    width: 270px;
+    height: 70vh; }
+    .container div {
+      width: 40px;
+      height: 60px; }
 
   [class*="fa-"] {
-    font-size: 30px;
-    padding: 34% 27%; } }
+    font-size: 25px;
+    padding: 45% 24% 1%; } }
 div .rotate {
   background-color: rgba(19, 50, 59, 0.329);
   transform-origin: center center;
