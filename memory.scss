@@ -30,6 +30,26 @@ body {
       weight: 650; 
     }
   }
+  p {
+    margin: 18px 50px 0px;
+    color: #AAB8E5;
+    .clicks {
+      background-color: transparent;
+      color: #AAB8E5;
+      margin-left: 4px;
+      animation-iteration-count: infinite;
+      animation-duration: 1s;
+    }
+  }
+}
+@keyframes animate {
+  0% {
+    font-size: 18px;
+    opacity: 0.1;
+  }
+  100% {
+    font-size: 19px;
+  }
 }
 
 %items {
@@ -43,7 +63,7 @@ body {
 }
 
 .container {
-  margin: 50px;
+  margin: 30px 50px 50px;
   display: grid;
   grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr;
   grid-template-areas: "one two three"
@@ -116,7 +136,7 @@ div {
   }
 }
 
-.visible {
+.invisible {
   visibility: hidden;
 }
 
