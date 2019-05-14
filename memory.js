@@ -8,6 +8,9 @@ let classNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 let arr = [];
 const clicks = document.querySelector("p .clicks");
 const bestScore = document.querySelector("p .bscore");
+let secs = document.querySelector(".time .secs");
+let mins = document.querySelector(".time .mins");
+
 
 
 /* Functionality */
@@ -96,6 +99,17 @@ const restart = function () {
   lastCount = clicks.textContent;
   console.log(lastCount);
 }
+
+let seconds = 0;
+let minutes = 1;
+let timer = function () {
+  secs.textContent = seconds++
+  if (seconds === 61) {
+    mins.textContent = `${minutes++} :`
+    seconds = 0;
+  }
+}
+setInterval(timer, 1000);
 
 /* Event Listeners */
 
